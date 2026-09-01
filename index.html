@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Burmese Harp — 2nd Anniversary Quiz</title>
+<meta name="description" content="Answer 5 questions about Burmese Harp and Myanmar culture for a chance to win a free dessert or drink.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --jade-950:#5c1f1b;
+    --jade-900:#7e2b25;
+    --jade-800:#962d2a;
+    --jade-700:#ae3d33;
+    --gold-500:#cf9d3f;
+    --gold-400:#e0b45c;
+    --gold-100:#f4e2b8;
+    --lacquer-600:#9c3b34;
+    --lacquer-500:#b3473f;
+    --cream-050:#faf3e4;
+    --cream-100:#f2e8d3;
+    --ink:#132420;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow-card: 0 20px 50px -20px rgba(9,26,22,0.55);
+    --focus-ring: 0 0 0 3px var(--jade-950), 0 0 0 6px var(--gold-400);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    min-height:100vh;
+    background:
+      radial-gradient(1100px 600px at 50% -10%, var(--jade-800) 0%, var(--jade-900) 45%, var(--jade-950) 100%);
+    color:var(--cream-050);
+    font-family:'Work Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.5;
+    display:flex;
+    justify-content:center;
+    padding:28px 16px 48px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:640px;
+  }
+
+  /* ---------- Header ---------- */
+  .brandmark{
+    width:156px;height:156px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brandmark img{width:auto;height:150px;display:block;}
+
+  header.top{ text-align:center; margin-bottom:22px; }
+
+  .brand-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(1.9rem, 6vw, 2.5rem);
+    letter-spacing:0.01em;
+    margin:0 0 6px;
+    color:var(--cream-050);
+  }
+
+  .occasion{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    color:var(--gold-400);
+    font-size:1.05rem;
+    margin:0 0 10px;
+  }
+
+  .sub{
+    margin:0;
+    color:var(--cream-100);
+    opacity:0.85;
+    font-size:0.98rem;
+  }
+
+  .divider{
+    width:64px;height:3px;margin:18px auto 0;
+    background:linear-gradient(90deg,transparent, var(--gold-500), transparent);
+    border-radius:2px;
+  }
+
+  /* ---------- Cards ---------- */
+  .card{
+    background: var(--cream-050);
+    color:var(--ink);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);
+    padding:26px 22px 24px;
+  }
+
+  /* ---------- Intro / rules screen ---------- */
+  .rules-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.35rem;
+    margin:0 0 14px;
+    color:var(--lacquer-600);
+    text-align:center;
+  }
+  .rules-list{
+    list-style:none;
+    margin:0 0 22px;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .rules-list li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    font-size:0.98rem;
+  }
+  .rules-list .dot{
+    flex:none;
+    width:9px;height:9px;
+    margin-top:7px;
+    border-radius:50%;
+    background:var(--gold-500);
+  }
+  .rules-note{
+    font-size:0.85rem;
+    color:#5a5147;
+    text-align:center;
+    margin:0 0 22px;
+  }
+
+  button{ font-family:inherit; }
+
+  .btn-primary{
+    display:block;
+    width:100%;
+    min-height:56px;
+    background:linear-gradient(155deg, var(--lacquer-500), var(--lacquer-600));
+    color:var(--cream-050);
+    border:none;
+    border-radius:999px;
+    font-size:1.05rem;
+    font-weight:600;
+    letter-spacing:0.01em;
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px rgba(156,59,52,0.7);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 14px 28px -10px rgba(156,59,52,0.8); }
+  .btn-primary:active{ transform:translateY(0); }
+  .btn-primary:focus-visible{ outline:none; box-shadow:var(--focus-ring), 0 10px 24px -10px rgba(156,59,52,0.7); }
+  .btn-primary:disabled{ opacity:0.5; cursor:not-allowed; transform:none; }
+
+  .btn-secondary{
+    display:block;
+    width:100%;
+    min-height:52px;
+    background:transparent;
+    color:var(--jade-900);
+    border:2px solid var(--jade-800);
+    border-radius:999px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .btn-secondary:focus-visible{ outline:none; box-shadow:0 0 0 3px var(--cream-050), 0 0 0 6px var(--jade-800); }
+
+  /* ---------- Quiz screen ---------- */
+  .progress-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .progress-label{
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.06em;
+    color:var(--jade-800);
+  }
+  .progress-track{
+    height:8px;
+    width:100%;
+    background:var(--cream-100);
+    border-radius:999px;
+    overflow:hidden;
+    margin-bottom:22px;
+  }
+  .progress-fill{
+    height:100%;
+    background:linear-gradient(90deg, var(--gold-500), var(--lacquer-500));
+    border-radius:999px;
+    transition:width 0.35s ease;
+  }
+
+  .question-text{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.3rem;
+    line-height:1.35;
+    margin:0 0 20px;
+    color:var(--ink);
+  }
+
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin:0 0 24px;
+    padding:0;
+    list-style:none;
+  }
+
+  .option-btn{
+    width:100%;
+    min-height:56px;
+    padding:14px 18px;
+    text-align:left;
+    background:var(--cream-100);
+    border:2px solid transparent;
+    border-radius:var(--radius-md);
+    color:var(--ink);
+    font-size:1rem;
+    font-weight:500;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  }
+  .option-btn:hover:not(:disabled){ background:#ecdfc0; }
+  .option-btn:focus-visible{ outline:none; box-shadow:0 0 0 3px var(--cream-050), 0 0 0 6px var(--jade-800); }
+  .option-btn .marker{
+    flex:none;
+    width:24px;height:24px;
+    border-radius:50%;
+    border:2px solid var(--jade-700);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .option-btn.selected{
+    background:var(--jade-900);
+    border-color:var(--jade-900);
+    color:var(--cream-050);
+  }
+  .option-btn.selected .marker{
+    background:var(--gold-500);
+    border-color:var(--gold-500);
+  }
+  .option-btn:disabled:not(.selected){
+    opacity:0.55;
+    cursor:not-allowed;
+  }
+
+  .quiz-actions{ display:flex; }
+
+  /* ---------- Result screens ---------- */
+  .result-emoji-row{ text-align:center; font-size:2.1rem; margin-bottom:6px; }
+  .result-title{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(1.7rem,7vw,2.1rem);
+    text-align:center;
+    margin:0 0 6px;
+  }
+  .result-title.win{ color:var(--lacquer-600); }
+  .result-title.lose{ color:var(--jade-800); }
+
+  .result-score{
+    text-align:center;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--gold-500);
+    font-size:1rem;
+    margin:0 0 18px;
+  }
+
+  .result-body{
+    text-align:center;
+    font-size:1.02rem;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+
+  .prize-box{
+    background:var(--jade-900);
+    color:var(--cream-050);
+    border-radius:var(--radius-md);
+    padding:18px 18px;
+    text-align:center;
+    margin:0 0 18px;
+  }
+  .prize-box p{ margin:0 0 6px; }
+  .prize-box p:last-child{ margin-bottom:0; }
+  .prize-box .prize-line{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--gold-400);
+  }
+
+  .anniversary-line{
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.05rem;
+    color:var(--lacquer-600);
+    margin:0 0 22px;
+  }
+
+  .thanks-line{
+    text-align:center;
+    font-size:0.88rem;
+    color:#5a5147;
+    margin-top:16px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer{
+    text-align:center;
+    margin-top:26px;
+    color:var(--cream-100);
+    opacity:0.75;
+    font-size:0.82rem;
+    line-height:1.6;
+  }
+
+  .sr-only{
+    position:absolute;
+    width:1px;height:1px;
+    padding:0;margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;border:0;
+  }
+
+  [hidden]{ display:none !important; }
+
+  .fade-in{ animation:fadeIn 0.28s ease; }
+  @keyframes fadeIn{
+    from{ opacity:0; transform:translateY(6px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+
+  /* ---------- Confetti ---------- */
+  #confetti-layer{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:50;
+  }
+  .confetti-piece{
+    position:absolute;
+    top:-12px;
+    border-radius:2px;
+    opacity:0.95;
+    animation-name:confetti-fall;
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+  }
+  @keyframes confetti-fall{
+    0%{ transform:translateY(0) rotate(0deg); opacity:1; }
+    100%{ transform:translateY(110vh) rotate(360deg); opacity:0.9; }
+  }
+
+  @media (min-width:640px){
+    body{ padding:56px 16px; }
+    .card{ padding:36px 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brandmark" aria-hidden="true">
+      <img src="/burmeseharp-logo.png" alt="Burmese Harp logo" width="30" height="30">
+      <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 20V9C6 5.5 8.5 3 12 3C15.5 3 18 5.5 18 9V20" stroke="#0f2b26" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M6 20H18" stroke="#0f2b26" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M9 20V13" stroke="#0f2b26" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M12 20V11" stroke="#0f2b26" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M15 20V13" stroke="#0f2b26" stroke-width="1.6" stroke-linecap="round"/>
+      </svg> -->
+    </div>
+    <h1 class="brand-name">Burmese Harp</h1>
+    <p class="occasion">2nd Anniversary Quiz</p>
+    <p class="sub">How well do you know Burmese food &amp; culture?</p>
+    <div class="divider" aria-hidden="true"></div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="site-footer">
+    <p>Burmese Harp • Brooklyn, NY</p>
+    <p>Celebrating 2 Years of Burmese Cuisine</p>
+  </footer>
+</div>
+
+<div id="confetti-layer" aria-hidden="true"></div>
+
+<div aria-live="polite" class="sr-only" id="live-region"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- Question bank ---------------- */
+  var QUESTION_BANK = [
+    { q:"When did Burmese Harp open?", choices:["October 2022","October 2023","October 2024","October 2025"], correct:"October 2024" },
+    { q:"Where is Burmese Harp located?", choices:["Manhattan","Queens","Brooklyn","The Bronx"], correct:"Brooklyn" },
+    { q:"Which area of Brooklyn is Burmese Harp located in?", choices:["Williamsburg","Bay Ridge","Bushwick","Park Slope"], correct:"Bay Ridge" },
+    { q:"Which country does Burmese cuisine come from?", choices:["Thailand","Laos","Myanmar","Cambodia"], correct:"Myanmar" },
+    { q:"What is Burmese Harp's cuisine focus?", choices:["Japanese cuisine","Italian cuisine","Burmese cuisine","Mexican cuisine"], correct:"Burmese cuisine" },
+    { q:"Which of these is a Burmese Harp dessert?", choices:["Tiramisu","Falooda","Baklava","Cheesecake"], correct:"Falooda" },
+    { q:"What is Mohinga?", choices:["A Burmese noodle soup","A Burmese dessert","A fried rice dish","A fruit drink"], correct:"A Burmese noodle soup" },
+    { q:"What is Lahpet Thoke?", choices:["Chicken curry","Tea leaf salad","Coconut soup","Fried noodles"], correct:"Tea leaf salad" },
+    { q:"Which ingredient is especially associated with Lahpet Thoke?", choices:["Fermented tea leaves","Strawberries","Potatoes","Chocolate"], correct:"Fermented tea leaves" },
+    { q:"Nan Gyi Thoke is best described as:", choices:["A thick rice noodle salad","A coconut dessert","A fried chicken dish","A fruit smoothie"], correct:"A thick rice noodle salad" },
+    { q:"What type of noodles are used in Nan Gyi Thoke?", choices:["Very thin glass noodles","Thick rice noodles","Udon noodles","Soba noodles"], correct:"Thick rice noodles" },
+    { q:"What is Coconut Noodle Soup known for?", choices:["A rich coconut-based broth","A tomato-based pizza sauce","A chocolate sauce","A vinegar-only dressing"], correct:"A rich coconut-based broth" },
+    { q:"What is Kyay Oh?", choices:["A Burmese noodle dish","A Burmese tea","A dessert","A type of fruit"], correct:"A Burmese noodle dish" },
+    { q:"Which of these is a Burmese salad?", choices:["Tea Leaf Salad","Caesar Salad","Greek Salad","Cobb Salad"], correct:"Tea Leaf Salad" },
+    { q:"What is Falooda?", choices:["A Burmese-style sweet dessert/drink","A noodle soup","A rice curry","A fried appetizer"], correct:"A Burmese-style sweet dessert/drink" },
+    { q:"Which of these is a Burmese dessert?", choices:["Sanwin Makin / Burmese Banana Suji","Baklava","Mochi","Churros"], correct:"Sanwin Makin / Burmese Banana Suji" },
+    { q:"What is the largest city and former capital of Myanmar?", choices:["Mandalay","Yangon","Naypyidaw","Bagan"], correct:"Yangon" },
+    { q:"What is Myanmar's traditional New Year festival called?", choices:["Thingyan","Diwali","Songkran","Tet"], correct:"Thingyan" },
+    { q:"What is the traditional longyi?", choices:["A type of traditional clothing","A Burmese noodle","A musical instrument","A dessert"], correct:"A type of traditional clothing" },
+    { q:"Which ancient city is famous for thousands of Buddhist temples and pagodas in Myanmar?", choices:["Bagan","Yangon","Mawlamyine","Taunggyi"], correct:"Bagan" }
+  ];
+
+  var TOTAL_QUESTIONS = 5;
+
+  /* ---------------- State ---------------- */
+  var state = {
+    screen: "intro", // intro | quiz | result
+    questions: [],   // 5 shuffled questions, each with shuffled choices
+    currentIndex: 0,
+    selectedChoice: null,
+    answered: false,
+    score: 0
+  };
+
+  var app = document.getElementById("app");
+  var liveRegion = document.getElementById("live-region");
+
+  /* ---------------- Helpers ---------------- */
+  function shuffle(arr){
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function buildQuizSet(){
+    var picked = shuffle(QUESTION_BANK).slice(0, TOTAL_QUESTIONS);
+    return picked.map(function(item){
+      return {
+        q: item.q,
+        correct: item.correct,
+        choices: shuffle(item.choices)
+      };
+    });
+  }
+
+  function escapeHtml(str){
+    var div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function announce(msg){
+    liveRegion.textContent = msg;
+  }
+
+  /* ---------------- Rendering ---------------- */
+  function render(){
+    if (state.screen === "intro") return renderIntro();
+    if (state.screen === "quiz") return renderQuiz();
+    if (state.screen === "result") return renderResult();
+  }
+
+  function renderIntro(){
+    app.innerHTML =
+      '<div class="card fade-in">' +
+        '<h2 class="rules-title">Quiz your way to a free treat!</h2>' +
+        '<ul class="rules-list">' +
+          '<li><span class="dot" aria-hidden="true"></span><span>Answer 5 randomly selected questions about Burmese Harp, Burmese cuisine, and Myanmar culture.</span></li>' +
+          '<li><span class="dot" aria-hidden="true"></span><span>Get 5 out of 5 correct to win a free dessert or drink.</span></li>' +
+          '<li><span class="dot" aria-hidden="true"></span><span>One prize per person. While supplies last.</span></li>' +
+        '</ul>' +
+        '<button type="button" class="btn-primary" id="start-btn">Start Quiz</button>' +
+        '<p class="rules-note">No sign-up. No personal info. Just tap and go.</p>' +
+      '</div>';
+
+    document.getElementById("start-btn").addEventListener("click", function(){
+      state.questions = buildQuizSet();
+      state.currentIndex = 0;
+      state.selectedChoice = null;
+      state.answered = false;
+      state.score = 0;
+      state.screen = "quiz";
+      render();
+    });
+  }
+
+  function renderQuiz(){
+    var q = state.questions[state.currentIndex];
+    var qNum = state.currentIndex + 1;
+    var pct = Math.round((qNum / TOTAL_QUESTIONS) * 100);
+
+    var optionsHtml = q.choices.map(function(choice, idx){
+      var isSelected = state.selectedChoice === choice;
+      var disabledAttr = state.answered ? "disabled" : "";
+      var selectedClass = isSelected ? "selected" : "";
+      var markerContent = isSelected
+        ? '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6L5 9L10 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        : "";
+      return (
+        '<li>' +
+          '<button type="button" class="option-btn ' + selectedClass + '" data-choice-index="' + idx + '" ' + disabledAttr + ' aria-pressed="' + isSelected + '">' +
+            '<span class="marker" aria-hidden="true">' + markerContent + '</span>' +
+            '<span>' + escapeHtml(choice) + '</span>' +
+          '</button>' +
+        '</li>'
+      );
+    }).join("");
+
+    app.innerHTML =
+      '<div class="card fade-in">' +
+        '<div class="progress-row">' +
+          '<span class="progress-label">QUESTION ' + qNum + ' OF ' + TOTAL_QUESTIONS + '</span>' +
+        '</div>' +
+        '<div class="progress-track" role="progressbar" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress">' +
+          '<div class="progress-fill" style="width:' + pct + '%"></div>' +
+        '</div>' +
+        '<h2 class="question-text">' + escapeHtml(q.q) + '</h2>' +
+        '<ul class="options" role="group" aria-label="Answer choices">' + optionsHtml + '</ul>' +
+        '<div class="quiz-actions">' +
+          '<button type="button" class="btn-primary" id="next-btn" ' + (state.answered ? "" : "disabled") + '>' +
+            (qNum === TOTAL_QUESTIONS ? "See Results" : "Next Question") +
+          '</button>' +
+        '</div>' +
+      '</div>';
+
+    var optionButtons = app.querySelectorAll(".option-btn");
+    optionButtons.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        if (state.answered) return;
+        var idx = parseInt(btn.getAttribute("data-choice-index"), 10);
+        var choice = q.choices[idx];
+        state.selectedChoice = choice;
+        state.answered = true;
+        if (choice === q.correct) state.score += 1;
+        announce("Answer selected.");
+        renderQuiz();
+      });
+    });
+
+    var nextBtn = document.getElementById("next-btn");
+    nextBtn.addEventListener("click", function(e){
+      e.preventDefault();
+      if (!state.answered) return;
+      if (state.currentIndex + 1 < TOTAL_QUESTIONS){
+        state.currentIndex += 1;
+        state.selectedChoice = null;
+        state.answered = false;
+        render();
+      } else {
+        state.screen = "result";
+        render();
+      }
+    });
+  }
+
+  function renderResult(){
+    var won = state.score === TOTAL_QUESTIONS;
+
+    if (won){
+      app.innerHTML =
+        '<div class="card fade-in">' +
+          '<div class="result-emoji-row" aria-hidden="true">🎉</div>' +
+          '<h2 class="result-title win">You did it! 🎉</h2>' +
+          '<p class="result-score">' + state.score + '/' + TOTAL_QUESTIONS + ' CORRECT</p>' +
+          '<p class="result-body">Congratulations! You answered all 5 questions correctly.</p>' +
+          '<div class="prize-box">' +
+            '<p class="prize-line">You\u2019ve earned a FREE DESSERT OR DRINK from Burmese Harp.</p>' +
+            '<p>Show this screen to our staff to claim your prize.</p>' +
+          '</div>' +
+          '<p class="anniversary-line">Happy 2nd Anniversary, Burmese Harp!</p>' +
+          '<button type="button" class="btn-secondary" id="again-btn">Try Again</button>' +
+          '<p class="thanks-line">Thank you for celebrating Burmese Harp\u2019s 2nd Anniversary with us!</p>' +
+        '</div>';
+      launchConfetti();
+      announce("You won! Five out of five correct.");
+    } else {
+      app.innerHTML =
+        '<div class="card fade-in">' +
+          '<div class="result-emoji-row" aria-hidden="true">🇲🇲</div>' +
+          '<h2 class="result-title lose">So close! 🇲🇲</h2>' +
+          '<p class="result-score">' + state.score + '/' + TOTAL_QUESTIONS + ' CORRECT</p>' +
+          '<p class="result-body">You didn\u2019t win this time, but now you know a little more about Burmese food and Myanmar!</p>' +
+          '<button type="button" class="btn-primary" id="again-btn">Try Again</button>' +
+          '<p class="thanks-line">Thank you for celebrating Burmese Harp\u2019s 2nd Anniversary with us!</p>' +
+        '</div>';
+      announce("Quiz complete. " + state.score + " out of " + TOTAL_QUESTIONS + " correct.");
+    }
+
+    document.getElementById("again-btn").addEventListener("click", function(){
+      state.questions = buildQuizSet();
+      state.currentIndex = 0;
+      state.selectedChoice = null;
+      state.answered = false;
+      state.score = 0;
+      state.screen = "quiz";
+      render();
+    });
+  }
+
+  /* ---------------- Confetti (winning screen only) ---------------- */
+  function launchConfetti(){
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
+
+    var layer = document.getElementById("confetti-layer");
+    layer.innerHTML = "";
+    var colors = ["#cf9d3f", "#e0b45c", "#b3473f", "#faf3e4", "#265a50"];
+    var pieceCount = 60;
+
+    for (var i = 0; i < pieceCount; i++){
+      var piece = document.createElement("div");
+      piece.className = "confetti-piece";
+      var size = 6 + Math.random() * 6;
+      piece.style.width = size + "px";
+      piece.style.height = (size * 0.4) + "px";
+      piece.style.left = (Math.random() * 100) + "vw";
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.animationDuration = (2.4 + Math.random() * 1.6) + "s";
+      piece.style.animationDelay = (Math.random() * 0.6) + "s";
+      layer.appendChild(piece);
+    }
+
+    setTimeout(function(){ layer.innerHTML = ""; }, 4500);
+  }
+
+  /* ---------------- Prevent accidental form submission ---------------- */
+  document.addEventListener("submit", function(e){ e.preventDefault(); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Enter" && e.target.tagName !== "BUTTON"){
+      e.preventDefault();
+    }
+  });
+
+  /* ---------------- Init ---------------- */
+  render();
+})();
+</script>
+
+</body>
+</html>
